@@ -1,0 +1,12 @@
+# Ejecutables
+taller
+taller.exe
+*.o
+
+# Archivos de compilación de IDEs / VS Code
+.vscode/
+.idea/
+*.build/
+
+# Archivos temporales
+*.tmp
