@@ -65,11 +65,17 @@ Relación Orden ➔ Detalles: Cada OrdenServicio posee un puntero dinámico a De
 
 El proyecto divide responsabilidades en tres capas bien definidas para garantizar mantenibilidad:
 
-### Capa de Estructuras (include/estructuras.h): Define los tipos de datos abstractos (struct), los códigos de error mediante enumeraciones (ResultadoOperacion) y las capacidades de los arreglos. No contiene lógica de negocio ni I/O.
+### Capa de Estructuras (include/estructuras.h): 
 
-### Capa de Lógica de Negocio (include/logica.h y src/logica.cpp): Contiene todas las reglas del sistema (validación de stock, límites de órdenes por mecánico, control de unicidad de placas y cédulas, y redimensionamiento dinámico de memoria con new y delete[]). Es completamente independiente de la pantalla.
+Define los tipos de datos abstractos (struct), los códigos de error mediante enumeraciones (ResultadoOperacion) y las capacidades de los arreglos. No contiene lógica de negocio ni I/O.
 
-### Capa de Presentación (include/presentacion.h y src/presentacion.cpp): Maneja exclusivamente la interfaz de usuario por consola (cin, cout, menús interactivos, formato de tablas con iomanip y lectura segura de datos). Se comunica con la lógica llamando a sus funciones expuestas.
+### Capa de Lógica de Negocio (include/logica.h y src/logica.cpp): 
+
+Contiene todas las reglas del sistema (validación de stock, límites de órdenes por mecánico, control de unicidad de placas y cédulas, y redimensionamiento dinámico de memoria con new y delete[]). Es completamente independiente de la pantalla.
+
+### Capa de Presentación (include/presentacion.h y src/presentacion.cpp):
+
+Maneja exclusivamente la interfaz de usuario por consola (cin, cout, menús interactivos, formato de tablas con iomanip y lectura segura de datos). Se comunica con la lógica llamando a sus funciones expuestas.
 
 # ✒️ Firmas Diseñadas y Justificación
 
