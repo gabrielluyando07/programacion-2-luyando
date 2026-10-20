@@ -15,6 +15,7 @@ Repuestos e Inventario: Control de stock, precios unitarios, alertas automática
 Integrantes de la pareja:
 
 Gabriel Luyando
+
 José Brach
 
 ⚙️ Instrucciones de Compilación y Ejecución
