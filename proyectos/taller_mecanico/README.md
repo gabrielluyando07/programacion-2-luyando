@@ -30,6 +30,7 @@ g++ -Wall -Wextra -std=c++11 -Iinclude src/logica.cpp src/presentacion.cpp src/m
 2. Ejecución del programa
 
 En la terminal de VS Code:
+
 ./taller
 
 
