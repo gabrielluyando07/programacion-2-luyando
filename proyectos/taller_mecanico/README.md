@@ -15,29 +15,20 @@ Repuestos e Inventario: Control de stock, precios unitarios, alertas automática
 Integrantes de la pareja:
 
 Gabriel Luyando
-
-Camila Veljovic
+José Brach
 
 ⚙️ Instrucciones de Compilación y Ejecución
 
 El proyecto está estructurado de manera modular separando los encabezados (include/) de las implementaciones (src/).
 
 1. Compilación mediante g++ (Requerido en terminal)
-
 Abre la terminal en la carpeta raíz del proyecto (taller_mecanico) y ejecuta el siguiente comando:
 
 g++ -Wall -Wextra -std=c++11 -Iinclude src/logica.cpp src/presentacion.cpp src/main.cpp -o taller.exe
 
-
 2. Ejecución del programa
 
-En Windows (PowerShell / CMD):
-
-.\taller.exe
-
-
-En Linux / macOS / Git Bash:
-
+En la terminal de VS Code:
 ./taller
 
 
@@ -60,9 +51,9 @@ El sistema se basa en un contenedor principal SistemaTaller que administra arreg
 
 Relación Orden ➔ Detalles: Cada OrdenServicio posee un puntero dinámico a DetalleOrden* detalles y un contador numDetalles, permitiendo asociar múltiples repuestos con sus respectivas cantidades y precios congelados al momento de la transacción.
 
-🧩 Explicación de la Separación de Capas
+🧩 Separación de Capas
 
-El proyecto divide responsabilidades en tres capas bien definidas para garantizar mantenibilidad y buenas prácticas de ingeniería de software:
+El proyecto divide responsabilidades en tres capas bien definidas para garantizar mantenibilidad:
 
 Capa de Estructuras (include/estructuras.h): Define los tipos de datos abstractos (struct), los códigos de error mediante enumeraciones (ResultadoOperacion) y las capacidades de los arreglos. No contiene lógica de negocio ni I/O.
 
@@ -76,27 +67,27 @@ Módulo de Mecánicos
 
 Mecanico* agregarMecanico(SistemaTaller* s, Mecanico datos);
 
-Justificación: Retorna un puntero al objeto recién creado dentro del arreglo dinámico de la estructura principal para confirmar su inserción exitosa en memoria, o nullptr si la cédula está duplicada o la especialidad no es válida.
+Retorna un puntero al objeto recién creado dentro del arreglo dinámico de la estructura principal para confirmar su inserción exitosa en memoria, o nullptr si la cédula está duplicada o la especialidad no es válida.
 
 Mecanico** listarMecanicos(SistemaTaller* s, int* cantidad);
 
-Justificación: Retorna un arreglo dinámico de punteros (Mecanico**) para facilitar la visualización externa sin duplicar los registros originales en memoria, devolviendo por referencia la cantidad total mediante el parámetro int* cantidad.
+Retorna un arreglo dinámico de punteros (Mecanico**) para facilitar la visualización externa sin duplicar los registros originales en memoria, devolviendo por referencia la cantidad total mediante el parámetro int* cantidad.
 
 Módulo de Repuestos
 
 bool registrarEntradaMercancia(SistemaTaller* s, int id, int cantidad);
 
-Justificación: Retorna un booleano (true o false) indicando de forma binaria si la operación de sumar stock al repuesto especificado se completó con éxito o si el ID no fue encontrado.
+Retorna un booleano (true o false) indicando de forma binaria si la operación de sumar stock al repuesto especificado se completó con éxito o si el ID no fue encontrado.
 
 ResultadoOperacion eliminarRepuesto(SistemaTaller* s, int id);
 
-Justificación: Retorna un código enumerado (ResultadoOperacion) para detallar con precisión la causa exacta en caso de fallo (ej. ERROR_NO_ENCONTRADO o ERROR_TIENE_ORDENES si el repuesto está asociado a una orden histórica).
+Retorna un código enumerado (ResultadoOperacion) para detallar con precisión la causa exacta en caso de fallo (ej. ERROR_NO_ENCONTRADO o ERROR_TIENE_ORDENES si el repuesto está asociado a una orden histórica).
 
 Módulo de Órdenes de Servicio
 
 OrdenServicio* abrirOrden(SistemaTaller* s, int idVehiculo, int idMecanico, const char* fechaApertura, const char* descripcionFalla, int kilometrajeIngreso, ResultadoOperacion* resultado);
 
-Justificación: Retorna un puntero a la orden creada para permitir operaciones encadenadas inmediatas (como agregar repuestos), y utiliza un parámetro de salida por referencia (ResultadoOperacion* resultado) para reportar validaciones de negocio fallidas (ej. mecánico con más de 3 órdenes abiertas o vehículo duplicado).
+Retorna un puntero a la orden creada para permitir operaciones encadenadas inmediatas (como agregar repuestos), y utiliza un parámetro de salida por referencia (ResultadoOperacion* resultado) para reportar validaciones de negocio fallidas (ej. mecánico con más de 3 órdenes abiertas o vehículo duplicado).
 
 🧠 Preguntas de Análisis
 
