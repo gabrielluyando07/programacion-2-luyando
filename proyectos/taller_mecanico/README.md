@@ -16,32 +16,25 @@ Repuestos e Inventario: Control de stock, precios unitarios, alertas automática
 
 # Gabriel Luyando
 
-<<<<<<< HEAD
-# José Brach
 =======
-José Brach
->>>>>>> c455321ca04d4b7b2caee8753896f61539963315
+
+# José Brach
+
 
 ### ⚙️ Instrucciones de Compilación y Ejecución
 
 El proyecto está estructurado de manera modular separando los encabezados (include/) de las implementaciones (src/).
 
-<<<<<<< HEAD
 # 1. Compilación mediante g++ (Requerido en terminal)
 
 =======
 1. Compilación mediante g++ (Requerido en terminal)
->>>>>>> c455321ca04d4b7b2caee8753896f61539963315
 Abre la terminal en la carpeta raíz del proyecto (taller_mecanico) y ejecuta el siguiente comando:
 
 g++ -Wall -Wextra -std=c++11 -Iinclude src/logica.cpp src/presentacion.cpp src/main.cpp -o taller.exe
 
-<<<<<<< HEAD
 
 # 2. Ejecución del programa
-=======
-2. Ejecución del programa
->>>>>>> c455321ca04d4b7b2caee8753896f61539963315
 
 En la terminal de VS Code:
 
@@ -67,11 +60,9 @@ El sistema se basa en un contenedor principal SistemaTaller que administra arreg
 
 Relación Orden ➔ Detalles: Cada OrdenServicio posee un puntero dinámico a DetalleOrden* detalles y un contador numDetalles, permitiendo asociar múltiples repuestos con sus respectivas cantidades y precios congelados al momento de la transacción.
 
-<<<<<<< HEAD
+
 ## 🧩 Separación de Capas
 =======
-🧩 Separación de Capas
->>>>>>> c455321ca04d4b7b2caee8753896f61539963315
 
 El proyecto divide responsabilidades en tres capas bien definidas para garantizar mantenibilidad:
 
