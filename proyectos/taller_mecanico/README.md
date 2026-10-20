@@ -28,7 +28,6 @@ El proyecto está estructurado de manera modular separando los encabezados (incl
 # 1. Compilación mediante g++ (Requerido en terminal)
 
 =======
-1. Compilación mediante g++ (Requerido en terminal)
 Abre la terminal en la carpeta raíz del proyecto (taller_mecanico) y ejecuta el siguiente comando:
 
 g++ -Wall -Wextra -std=c++11 -Iinclude src/logica.cpp src/presentacion.cpp src/main.cpp -o taller.exe
