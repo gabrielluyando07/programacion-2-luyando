@@ -1,4 +1,4 @@
-#include "logica.h"
+#include "../include/logica.h"
 #include <cstring>
 #include <cctype>
 #include <cstdlib>
@@ -55,7 +55,6 @@ void liberarSistema(SistemaTaller* s) {
     delete[] s->ordenes;
 }
 
-// --- VEHÍCULOS ---
 Vehiculo* agregarVehiculo(SistemaTaller* s, Vehiculo datos) {
     if (datos.anio < 1950 || datos.anio > 2027 || datos.kilometraje < 0) return nullptr;
     if (buscarVehiculoPorPlaca(s, datos.placa) != nullptr) return nullptr;
@@ -151,7 +150,6 @@ ResultadoOperacion eliminarVehiculo(SistemaTaller* s, int id) {
     return EXITO;
 }
 
-// --- MECÁNICOS ---
 Mecanico* agregarMecanico(SistemaTaller* s, Mecanico datos) {
     if (buscarMecanicoPorCedula(s, datos.cedula) != nullptr) return nullptr;
     if (strcmp(datos.especialidad, "MOTOR") != 0 && strcmp(datos.especialidad, "FRENOS") != 0 &&
@@ -205,7 +203,6 @@ int contarOrdenesAbiertasMecanico(SistemaTaller* s, int idMecanico) {
     return cont;
 }
 
-// --- REPUESTOS ---
 Repuesto* agregarRepuesto(SistemaTaller* s, Repuesto datos) {
     if (datos.precio <= 0 || datos.stock < 0 || datos.stockMinimo < 0) return nullptr;
     if (buscarRepuestoPorCodigo(s, datos.codigo) != nullptr) return nullptr;
@@ -303,7 +300,6 @@ ResultadoOperacion eliminarRepuesto(SistemaTaller* s, int id) {
     return EXITO;
 }
 
-// --- ÓRDENES DE SERVICIO ---
 OrdenServicio* abrirOrden(SistemaTaller* s, int idVehiculo, int idMecanico, const char* fechaApertura, const char* descripcionFalla, int kilometrajeIngreso, ResultadoOperacion* resultado) {
     Vehiculo* v = buscarVehiculoPorID(s, idVehiculo);
     if (!v) { *resultado = ERROR_NO_ENCONTRADO; return nullptr; }
@@ -364,7 +360,7 @@ ResultadoOperacion agregarRepuestoAOrden(SistemaTaller* s, int idOrden, int idRe
 
     Repuesto* r = buscarRepuestoPorID(s, idRepuesto);
     if (!r) return ERROR_NO_ENCONTRADO;
-    if (r->stock < cantidad) return ERROR_STOCK_INSUFICIENTE;
+    if (r->stock < cantidad) return ERROR_STOCK_INSUFFICIENTE;
 
     for (int i = 0; i < o->numDetalles; ++i) {
         if (o->detalles[i].idRepuesto == idRepuesto) {
@@ -425,7 +421,8 @@ ResultadoOperacion cerrarOrden(SistemaTaller* s, int idOrden, float manoObra, co
     if (o->numDetalles == 0 && manoObra == 0) return ERROR_DATOS_INVALIDOS;
 
     o->manoObra = manoObra;
-    strncpy(o->fechaCierre, fechaCierre, sizeof(o.fechaCierre));
+    // CORREGIDO AQUÍ: se usa o->fechaCierre en lugar de o.fechaCierre
+    strncpy(o->fechaCierre, fechaCierre, sizeof(o->fechaCierre));
     strcpy(o->estado, "CERRADA");
     return EXITO;
 }

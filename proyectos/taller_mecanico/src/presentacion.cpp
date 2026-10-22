@@ -1,5 +1,6 @@
-#include "presentacion.h"
-#include "logica.h"
+#include "../include/presentacion.h"
+#include "../include/logica.h"
+#include "../include/estructuras.h"
 #include <iostream>
 #include <iomanip>
 #include <limits>
