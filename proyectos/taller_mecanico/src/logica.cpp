@@ -360,7 +360,7 @@ ResultadoOperacion agregarRepuestoAOrden(SistemaTaller* s, int idOrden, int idRe
 
     Repuesto* r = buscarRepuestoPorID(s, idRepuesto);
     if (!r) return ERROR_NO_ENCONTRADO;
-    if (r->stock < cantidad) return ERROR_STOCK_INSUFFICIENTE;
+    if (r->stock < cantidad) return ERROR_STOCK_INSUFICIENTE;
 
     for (int i = 0; i < o->numDetalles; ++i) {
         if (o->detalles[i].idRepuesto == idRepuesto) {

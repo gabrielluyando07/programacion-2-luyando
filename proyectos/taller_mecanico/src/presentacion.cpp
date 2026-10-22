@@ -326,7 +326,7 @@ void menuOrdenes(SistemaTaller* s) {
             int cant = leerInt("Cantidad: ");
             ResultadoOperacion res = agregarRepuestoAOrden(s, idO, idR, cant);
             if (res == EXITO) cout << "Repuesto agregado a la orden." << endl;
-            else if (res == ERROR_STOCK_INSUFFICIENTE) cout << "ERROR: Stock insuficiente." << endl;
+            else if (res == ERROR_STOCK_INSUFICIENTE) cout << "ERROR: Stock insuficiente." << endl;
             else cout << "ERROR: Orden o repuesto no encontrado / orden no abierta." << endl;
 
         } else if (opc == 3) {
