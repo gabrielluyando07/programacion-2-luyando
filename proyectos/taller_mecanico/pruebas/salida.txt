@@ -1,0 +1,338 @@
+
+==========================================
+      SISTEMA DE GESTION DE TALLER        
+ Taller: Autoservicio El Lago
+==========================================
+1. Gestion de Vehiculos
+2. Gestion de Mecanicos
+3. Inventario de Repuestos
+4. Ordenes de Servicio
+0. Salir
+Seleccione una opcion: 
+--- GESTION DE VEHICULOS ---
+1. Registrar vehiculo
+2. Buscar vehiculo por ID / Placa
+3. Buscar vehiculo por Propietario
+4. Actualizar vehiculo
+5. Eliminar vehiculo
+6. Listar vehiculos
+0. Volver al menu principal
+Seleccione una opción: Ingrese placa: Ingrese marca: Ingrese modelo: Ingrese año (1950-2027): Ingrese kilometraje: Ingrese nombre del propietario: Ingrese cédula del propietario: Ingrese teléfono del propietario: Ingrese fecha de registro (YYYY-MM-DD): ¿Desea registrar este vehículo? (S/N): Vehículo registrado con éxito.
+
+--- GESTION DE VEHICULOS ---
+1. Registrar vehiculo
+2. Buscar vehiculo por ID / Placa
+3. Buscar vehiculo por Propietario
+4. Actualizar vehiculo
+5. Eliminar vehiculo
+6. Listar vehiculos
+0. Volver al menu principal
+Seleccione una opción: Ingrese placa: Ingrese marca: Ingrese modelo: Ingrese año (1950-2027): Ingrese kilometraje: Ingrese nombre del propietario: Ingrese cédula del propietario: Ingrese teléfono del propietario: Ingrese fecha de registro (YYYY-MM-DD): ¿Desea registrar este vehículo? (S/N): Vehículo registrado con éxito.
+
+--- GESTION DE VEHICULOS ---
+1. Registrar vehiculo
+2. Buscar vehiculo por ID / Placa
+3. Buscar vehiculo por Propietario
+4. Actualizar vehiculo
+5. Eliminar vehiculo
+6. Listar vehiculos
+0. Volver al menu principal
+Seleccione una opción: Ingrese placa: Ingrese marca: Ingrese modelo: Ingrese año (1950-2027): Ingrese kilometraje: Ingrese nombre del propietario: Ingrese cédula del propietario: Ingrese teléfono del propietario: Ingrese fecha de registro (YYYY-MM-DD): ¿Desea registrar este vehículo? (S/N): Vehículo registrado con éxito.
+
+--- GESTION DE VEHICULOS ---
+1. Registrar vehiculo
+2. Buscar vehiculo por ID / Placa
+3. Buscar vehiculo por Propietario
+4. Actualizar vehiculo
+5. Eliminar vehiculo
+6. Listar vehiculos
+0. Volver al menu principal
+Seleccione una opción: Ingrese nombre o parte del nombre del propietario: ID   | Placa      | Vehículo          | Año  | Km       | Propietario
+-----------------------------------------------------------------
+1    | AB123CD    | Toyota Corolla     | 2015  | 40000    | Maria Gonzalez
+2    | XY987ZW    | Chevrolet Aveo     | 2009  | 128300   | Maria Gonzalez
+Total de vehículos: 2
+
+--- GESTION DE VEHICULOS ---
+1. Registrar vehiculo
+2. Buscar vehiculo por ID / Placa
+3. Buscar vehiculo por Propietario
+4. Actualizar vehiculo
+5. Eliminar vehiculo
+6. Listar vehiculos
+0. Volver al menu principal
+Seleccione una opción: ID   | Placa      | Vehículo          | Año  | Km       | Propietario
+-----------------------------------------------------------------
+1    | AB123CD    | Toyota Corolla     | 2015  | 40000    | Maria Gonzalez
+2    | XY987ZW    | Chevrolet Aveo     | 2009  | 128300   | Maria Gonzalez
+3    | JK555LM    | Ford Fiesta        | 2012  | 95000    | Pedro Perez
+Total de vehículos: 3
+
+--- GESTION DE VEHICULOS ---
+1. Registrar vehiculo
+2. Buscar vehiculo por ID / Placa
+3. Buscar vehiculo por Propietario
+4. Actualizar vehiculo
+5. Eliminar vehiculo
+6. Listar vehiculos
+0. Volver al menu principal
+Seleccione una opción: 
+==========================================
+      SISTEMA DE GESTION DE TALLER        
+ Taller: Autoservicio El Lago
+==========================================
+1. Gestion de Vehiculos
+2. Gestion de Mecanicos
+3. Inventario de Repuestos
+4. Ordenes de Servicio
+0. Salir
+Seleccione una opcion: 
+--- GESTION DE MECANICOS ---
+1. Registrar mecanico
+2. Listar mecanicos
+0. Volver
+Seleccione una opcion: Ingrese cedula: Ingrese nombre: Ingrese especialidad (MOTOR/FRENOS/ELECTRICIDAD/SUSPENSION/GENERAL): Ingrese fecha de ingreso (YYYY-MM-DD): ¿Guardar mecanico? (S/N): Mecanico registrado exitosamente.
+
+--- GESTION DE MECANICOS ---
+1. Registrar mecanico
+2. Listar mecanicos
+0. Volver
+Seleccione una opcion: 
+==========================================
+      SISTEMA DE GESTION DE TALLER        
+ Taller: Autoservicio El Lago
+==========================================
+1. Gestion de Vehiculos
+2. Gestion de Mecanicos
+3. Inventario de Repuestos
+4. Ordenes de Servicio
+0. Salir
+Seleccione una opcion: 
+--- INVENTARIO DE REPUESTOS ---
+1. Registrar repuesto
+2. Registrar entrada de mercancia
+3. Cambiar precio
+4. Listar repuestos
+5. Eliminar repuesto
+0. Volver
+Seleccione una opcion: Ingrese codigo: Ingrese nombre: Ingrese marca: Ingrese precio: Ingrese stock inicial: Ingrese stock minimo: Ingrese fecha de registro (YYYY-MM-DD): ¿Registrar repuesto? (S/N): Repuesto registrado.
+
+--- INVENTARIO DE REPUESTOS ---
+1. Registrar repuesto
+2. Registrar entrada de mercancia
+3. Cambiar precio
+4. Listar repuestos
+5. Eliminar repuesto
+0. Volver
+Seleccione una opcion: Ingrese codigo: Ingrese nombre: Ingrese marca: Ingrese precio: Ingrese stock inicial: Ingrese stock minimo: Ingrese fecha de registro (YYYY-MM-DD): ¿Registrar repuesto? (S/N): Repuesto registrado.
+
+--- INVENTARIO DE REPUESTOS ---
+1. Registrar repuesto
+2. Registrar entrada de mercancia
+3. Cambiar precio
+4. Listar repuestos
+5. Eliminar repuesto
+0. Volver
+Seleccione una opcion: Ingrese codigo: Ingrese nombre: Ingrese marca: Ingrese precio: Ingrese stock inicial: Ingrese stock minimo: Ingrese fecha de registro (YYYY-MM-DD): ¿Registrar repuesto? (S/N): Repuesto registrado.
+
+--- INVENTARIO DE REPUESTOS ---
+1. Registrar repuesto
+2. Registrar entrada de mercancia
+3. Cambiar precio
+4. Listar repuestos
+5. Eliminar repuesto
+0. Volver
+Seleccione una opcion: Ingrese codigo: Ingrese nombre: Ingrese marca: Ingrese precio: Ingrese stock inicial: Ingrese stock minimo: Ingrese fecha de registro (YYYY-MM-DD): ¿Registrar repuesto? (S/N): Repuesto registrado.
+
+--- INVENTARIO DE REPUESTOS ---
+1. Registrar repuesto
+2. Registrar entrada de mercancia
+3. Cambiar precio
+4. Listar repuestos
+5. Eliminar repuesto
+0. Volver
+Seleccione una opcion: ID   | Codigo     | Nombre                    | Precio   | Stock  | Alerta
+----------------------------------------------------------------------
+1    | FRN-001    | Pastillas delanteras      | 25.00    | 10     | OK
+2    | FRN-014    | Liquido de frenos DOT4    | 12.50    | 1      | BAJO STOCK
+3    | MOT-001    | Filtro de Aceite          | 10.00    | 15     | OK
+4    | MOT-002    | Bujias Iridium            | 8.00     | 20     | OK
+
+--- INVENTARIO DE REPUESTOS ---
+1. Registrar repuesto
+2. Registrar entrada de mercancia
+3. Cambiar precio
+4. Listar repuestos
+5. Eliminar repuesto
+0. Volver
+Seleccione una opcion: Ingrese ID del repuesto: Ingrese cantidad que ingresa: Mercancia ingresada con exito.
+
+--- INVENTARIO DE REPUESTOS ---
+1. Registrar repuesto
+2. Registrar entrada de mercancia
+3. Cambiar precio
+4. Listar repuestos
+5. Eliminar repuesto
+0. Volver
+Seleccione una opcion: 
+--- INVENTARIO DE REPUESTOS ---
+1. Registrar repuesto
+2. Registrar entrada de mercancia
+3. Cambiar precio
+4. Listar repuestos
+5. Eliminar repuesto
+0. Volver
+Seleccione una opcion: 
+==========================================
+      SISTEMA DE GESTION DE TALLER        
+ Taller: Autoservicio El Lago
+==========================================
+1. Gestion de Vehiculos
+2. Gestion de Mecanicos
+3. Inventario de Repuestos
+4. Ordenes de Servicio
+0. Salir
+Seleccione una opcion: Opcion invalida.
+
+==========================================
+      SISTEMA DE GESTION DE TALLER        
+ Taller: Autoservicio El Lago
+==========================================
+1. Gestion de Vehiculos
+2. Gestion de Mecanicos
+3. Inventario de Repuestos
+4. Ordenes de Servicio
+0. Salir
+Seleccione una opcion: 
+--- GESTION DE VEHICULOS ---
+1. Registrar vehiculo
+2. Buscar vehiculo por ID / Placa
+3. Buscar vehiculo por Propietario
+4. Actualizar vehiculo
+5. Eliminar vehiculo
+6. Listar vehiculos
+0. Volver al menu principal
+Seleccione una opción: ERROR: Entrada inválida. Ingrese un número entero.
+Seleccione una opción: 
+--- GESTION DE VEHICULOS ---
+1. Registrar vehiculo
+2. Buscar vehiculo por ID / Placa
+3. Buscar vehiculo por Propietario
+4. Actualizar vehiculo
+5. Eliminar vehiculo
+6. Listar vehiculos
+0. Volver al menu principal
+Seleccione una opción: Ingrese placa: Ingrese marca: Ingrese modelo: Ingrese año (1950-2027): ERROR: Entrada inválida. Ingrese un número entero.
+Ingrese año (1950-2027): Ingrese kilometraje: Ingrese nombre del propietario: Ingrese cédula del propietario: Ingrese teléfono del propietario: Ingrese fecha de registro (YYYY-MM-DD): ¿Desea registrar este vehículo? (S/N): Registro cancelado.
+
+--- GESTION DE VEHICULOS ---
+1. Registrar vehiculo
+2. Buscar vehiculo por ID / Placa
+3. Buscar vehiculo por Propietario
+4. Actualizar vehiculo
+5. Eliminar vehiculo
+6. Listar vehiculos
+0. Volver al menu principal
+Seleccione una opción: 
+--- GESTION DE VEHICULOS ---
+1. Registrar vehiculo
+2. Buscar vehiculo por ID / Placa
+3. Buscar vehiculo por Propietario
+4. Actualizar vehiculo
+5. Eliminar vehiculo
+6. Listar vehiculos
+0. Volver al menu principal
+Seleccione una opción: Ingrese placa: Ingrese marca: Ingrese modelo: Ingrese año (1950-2027): Ingrese kilometraje: Ingrese nombre del propietario: Ingrese cédula del propietario: Ingrese teléfono del propietario: Ingrese fecha de registro (YYYY-MM-DD): ¿Desea registrar este vehículo? (S/N): Registro cancelado.
+
+--- GESTION DE VEHICULOS ---
+1. Registrar vehiculo
+2. Buscar vehiculo por ID / Placa
+3. Buscar vehiculo por Propietario
+4. Actualizar vehiculo
+5. Eliminar vehiculo
+6. Listar vehiculos
+0. Volver al menu principal
+Seleccione una opción: ERROR: Entrada inválida. Ingrese un número entero.
+Seleccione una opción: ID   | Placa      | Vehículo          | Año  | Km       | Propietario
+-----------------------------------------------------------------
+1    | AB123CD    | Toyota Corolla     | 2015  | 40000    | Maria Gonzalez
+2    | XY987ZW    | Chevrolet Aveo     | 2009  | 128300   | Maria Gonzalez
+3    | JK555LM    | Ford Fiesta        | 2012  | 95000    | Pedro Perez
+Total de vehículos: 3
+
+--- GESTION DE VEHICULOS ---
+1. Registrar vehiculo
+2. Buscar vehiculo por ID / Placa
+3. Buscar vehiculo por Propietario
+4. Actualizar vehiculo
+5. Eliminar vehiculo
+6. Listar vehiculos
+0. Volver al menu principal
+Seleccione una opción: Ingrese placa: Ingrese marca: Ingrese modelo: Ingrese año (1950-2027): Ingrese kilometraje: Ingrese nombre del propietario: Ingrese cédula del propietario: Ingrese teléfono del propietario: Ingrese fecha de registro (YYYY-MM-DD): ¿Desea registrar este vehículo? (S/N): Registro cancelado.
+
+--- GESTION DE VEHICULOS ---
+1. Registrar vehiculo
+2. Buscar vehiculo por ID / Placa
+3. Buscar vehiculo por Propietario
+4. Actualizar vehiculo
+5. Eliminar vehiculo
+6. Listar vehiculos
+0. Volver al menu principal
+Seleccione una opción: 
+--- GESTION DE VEHICULOS ---
+1. Registrar vehiculo
+2. Buscar vehiculo por ID / Placa
+3. Buscar vehiculo por Propietario
+4. Actualizar vehiculo
+5. Eliminar vehiculo
+6. Listar vehiculos
+0. Volver al menu principal
+Seleccione una opción: ERROR: Entrada inválida. Ingrese un número entero.
+Seleccione una opción: 
+--- GESTION DE VEHICULOS ---
+1. Registrar vehiculo
+2. Buscar vehiculo por ID / Placa
+3. Buscar vehiculo por Propietario
+4. Actualizar vehiculo
+5. Eliminar vehiculo
+6. Listar vehiculos
+0. Volver al menu principal
+Seleccione una opción: 
+--- GESTION DE VEHICULOS ---
+1. Registrar vehiculo
+2. Buscar vehiculo por ID / Placa
+3. Buscar vehiculo por Propietario
+4. Actualizar vehiculo
+5. Eliminar vehiculo
+6. Listar vehiculos
+0. Volver al menu principal
+Seleccione una opción: 
+--- GESTION DE VEHICULOS ---
+1. Registrar vehiculo
+2. Buscar vehiculo por ID / Placa
+3. Buscar vehiculo por Propietario
+4. Actualizar vehiculo
+5. Eliminar vehiculo
+6. Listar vehiculos
+0. Volver al menu principal
+Seleccione una opción: Ingrese placa: Ingrese marca: Ingrese modelo: Ingrese año (1950-2027): Ingrese kilometraje: Ingrese nombre del propietario: Ingrese cédula del propietario: Ingrese teléfono del propietario: Ingrese fecha de registro (YYYY-MM-DD): ¿Desea registrar este vehículo? (S/N): Registro cancelado.
+
+--- GESTION DE VEHICULOS ---
+1. Registrar vehiculo
+2. Buscar vehiculo por ID / Placa
+3. Buscar vehiculo por Propietario
+4. Actualizar vehiculo
+5. Eliminar vehiculo
+6. Listar vehiculos
+0. Volver al menu principal
+Seleccione una opción: 
+==========================================
+      SISTEMA DE GESTION DE TALLER        
+ Taller: Autoservicio El Lago
+==========================================
+1. Gestion de Vehiculos
+2. Gestion de Mecanicos
+3. Inventario de Repuestos
+4. Ordenes de Servicio
+0. Salir
+Seleccione una opcion: ¿Desea salir del programa? (Los datos no guardados se perderan) (S/N): 
