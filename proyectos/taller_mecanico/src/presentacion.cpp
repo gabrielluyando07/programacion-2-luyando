@@ -380,8 +380,8 @@ void menuPrincipal(SistemaTaller* s) {
         cout << "      SISTEMA DE GESTION DE TALLER        " << endl;
         cout << " Taller: " << s->taller.nombre << endl;
         cout << "==========================================" << endl;
-        cout << "1. Gestión de Vehiculos" << endl;
-        cout << "2. Gestión de Mecanicos" << endl;
+        cout << "1. Gestion de Vehiculos" << endl;
+        cout << "2. Gestion de Mecanicos" << endl;
         cout << "3. Inventario de Repuestos" << endl;
         cout << "4. Ordenes de Servicio" << endl;
         cout << "0. Salir" << endl;
