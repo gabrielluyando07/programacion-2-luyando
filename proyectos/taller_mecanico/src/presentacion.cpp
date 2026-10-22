@@ -87,11 +87,11 @@ void mostrarDetalleOrden(SistemaTaller* s, const OrdenServicio* orden) {
          << "Apertura: " << orden->fechaApertura << endl;
     cout << "              " << setw(15) << " " 
          << "Cierre  : " << (strlen(orden->fechaCierre) > 0 ? orden->fechaCierre : "N/A") << endl;
-    cout << "Vehículo   : " << (v ? v->placa : "N/A") << " - " 
+    cout << "Vehiculo   : " << (v ? v->placa : "N/A") << " - " 
          << (v ? v->marca : "") << " " << (v ? v->modelo : "") << " " 
          << (v ? to_string(v->anio) : "") << " (" << orden->kilometrajeIngreso << " km)" << endl;
     cout << "Dueño      : " << (v ? v->nombrePropietario : "N/A") << endl;
-    cout << "Mecánico   : " << (m ? m->nombre : "N/A") << " (" << (m ? m->especialidad : "") << ")" << endl;
+    cout << "Mecanico   : " << (m ? m->nombre : "N/A") << " (" << (m ? m->especialidad : "") << ")" << endl;
     cout << "Falla      : " << orden->descripcionFalla << endl;
     cout << "--------------------------------------------------------------" << endl;
     cout << left << setw(10) << "Código" << " | " 
@@ -123,14 +123,14 @@ void mostrarDetalleOrden(SistemaTaller* s, const OrdenServicio* orden) {
 void menuVehiculos(SistemaTaller* s) {
     int opc;
     do {
-        cout << "\n--- GESTIÓN DE VEHÍCULOS ---" << endl;
-        cout << "1. Registrar vehículo" << endl;
-        cout << "2. Buscar vehículo por ID / Placa" << endl;
-        cout << "3. Buscar vehículo por Propietario" << endl;
-        cout << "4. Actualizar vehículo" << endl;
-        cout << "5. Eliminar vehículo" << endl;
-        cout << "6. Listar vehículos" << endl;
-        cout << "0. Volver al menú principal" << endl;
+        cout << "\n--- GESTION DE VEHICULOS ---" << endl;
+        cout << "1. Registrar vehiculo" << endl;
+        cout << "2. Buscar vehiculo por ID / Placa" << endl;
+        cout << "3. Buscar vehiculo por Propietario" << endl;
+        cout << "4. Actualizar vehiculo" << endl;
+        cout << "5. Eliminar vehiculo" << endl;
+        cout << "6. Listar vehiculos" << endl;
+        cout << "0. Volver al menu principal" << endl;
         opc = leerInt("Seleccione una opción: ");
 
         if (opc == 1) {
@@ -188,30 +188,30 @@ void menuVehiculos(SistemaTaller* s) {
 void menuMecanicos(SistemaTaller* s) {
     int opc;
     do {
-        cout << "\n--- GESTIÓN DE MECÁNICOS ---" << endl;
-        cout << "1. Registrar mecánico" << endl;
-        cout << "2. Listar mecánicos" << endl;
+        cout << "\n--- GESTION DE MECANICOS ---" << endl;
+        cout << "1. Registrar mecanico" << endl;
+        cout << "2. Listar mecanicos" << endl;
         cout << "0. Volver" << endl;
-        opc = leerInt("Seleccione una opción: ");
+        opc = leerInt("Seleccione una opcion: ");
 
         if (opc == 1) {
             Mecanico m;
-            leerCadena("Ingrese cédula: ", m.cedula, sizeof(m.cedula));
+            leerCadena("Ingrese cedula: ", m.cedula, sizeof(m.cedula));
             leerCadena("Ingrese nombre: ", m.nombre, sizeof(m.nombre));
             leerCadena("Ingrese especialidad (MOTOR/FRENOS/ELECTRICIDAD/SUSPENSION/GENERAL): ", m.especialidad, sizeof(m.especialidad));
             leerCadena("Ingrese fecha de ingreso (YYYY-MM-DD): ", m.fechaIngreso, sizeof(m.fechaIngreso));
 
-            if (solicitarConfirmacion("¿Guardar mecánico?")) {
-                if (agregarMecanico(s, m)) cout << "Mecánico registrado exitosamente." << endl;
-                else cout << "ERROR: Cédula duplicada o especialidad inválida." << endl;
+            if (solicitarConfirmacion("¿Guardar mecanico?")) {
+                if (agregarMecanico(s, m)) cout << "Mecanico registrado exitosamente." << endl;
+                else cout << "ERROR: Cedula duplicada o especialidad invalida." << endl;
             }
 
         } else if (opc == 2) {
             int cant;
             Mecanico** res = listarMecanicos(s, &cant);
-            if (!res || cant == 0) cout << "No hay mecánicos registrados." << endl;
+            if (!res || cant == 0) cout << "No hay mecanicos registrados." << endl;
             else {
-                cout << left << setw(4) << "ID" << " | " << setw(12) << "Cédula" << " | " << setw(20) << "Nombre" << " | " << setw(14) << "Especialidad" << " | Ordenes Abiertas" << endl;
+                cout << left << setw(4) << "ID" << " | " << setw(12) << "Cedula" << " | " << setw(20) << "Nombre" << " | " << setw(14) << "Especialidad" << " | Ordenes Abiertas" << endl;
                 cout << string(65, '-') << endl;
                 for (int i = 0; i < cant; ++i) {
                     int abiertas = contarOrdenesAbiertasMecanico(s, res[i]->id);
@@ -228,46 +228,46 @@ void menuRepuestos(SistemaTaller* s) {
     do {
         cout << "\n--- INVENTARIO DE REPUESTOS ---" << endl;
         cout << "1. Registrar repuesto" << endl;
-        cout << "2. Registrar entrada de mercancía" << endl;
+        cout << "2. Registrar entrada de mercancia" << endl;
         cout << "3. Cambiar precio" << endl;
         cout << "4. Listar repuestos" << endl;
         cout << "5. Eliminar repuesto" << endl;
         cout << "0. Volver" << endl;
-        opc = leerInt("Seleccione una opción: ");
+        opc = leerInt("Seleccione una opcion: ");
 
         if (opc == 1) {
             Repuesto r;
-            leerCadena("Ingrese código: ", r.codigo, sizeof(r.codigo));
+            leerCadena("Ingrese codigo: ", r.codigo, sizeof(r.codigo));
             leerCadena("Ingrese nombre: ", r.nombre, sizeof(r.nombre));
             leerCadena("Ingrese marca: ", r.marca, sizeof(r.marca));
             r.precio = leerFloat("Ingrese precio: ");
             r.stock = leerInt("Ingrese stock inicial: ");
-            r.stockMinimo = leerInt("Ingrese stock mínimo: ");
+            r.stockMinimo = leerInt("Ingrese stock minimo: ");
             leerCadena("Ingrese fecha de registro (YYYY-MM-DD): ", r.fechaRegistro, sizeof(r.fechaRegistro));
 
             if (solicitarConfirmacion("¿Registrar repuesto?")) {
                 if (agregarRepuesto(s, r)) cout << "Repuesto registrado." << endl;
-                else cout << "ERROR: Código duplicado o datos inválidos." << endl;
+                else cout << "ERROR: Codigo duplicado o datos invalidos." << endl;
             }
 
         } else if (opc == 2) {
             int id = leerInt("Ingrese ID del repuesto: ");
             int cant = leerInt("Ingrese cantidad que ingresa: ");
-            if (registrarEntradaMercancia(s, id, cant)) cout << "Mercancía ingresada con éxito." << endl;
-            else cout << "ERROR: Repuesto no encontrado o cantidad inválida." << endl;
+            if (registrarEntradaMercancia(s, id, cant)) cout << "Mercancia ingresada con exito." << endl;
+            else cout << "ERROR: Repuesto no encontrado o cantidad invalida." << endl;
 
         } else if (opc == 3) {
             int id = leerInt("Ingrese ID del repuesto: ");
             float np = leerFloat("Ingrese nuevo precio: ");
             if (cambiarPrecioRepuesto(s, id, np)) cout << "Precio actualizado." << endl;
-            else cout << "ERROR: Repuesto no encontrado o precio inválido." << endl;
+            else cout << "ERROR: Repuesto no encontrado o precio invalido." << endl;
 
         } else if (opc == 4) {
             int cant;
             Repuesto** res = listarRepuestos(s, &cant);
             if (!res || cant == 0) cout << "No hay repuestos registrados." << endl;
             else {
-                cout << left << setw(4) << "ID" << " | " << setw(10) << "Código" << " | " << setw(25) << "Nombre" << " | " << setw(8) << "Precio" << " | " << setw(6) << "Stock" << " | Alerta" << endl;
+                cout << left << setw(4) << "ID" << " | " << setw(10) << "Codigo" << " | " << setw(25) << "Nombre" << " | " << setw(8) << "Precio" << " | " << setw(6) << "Stock" << " | Alerta" << endl;
                 cout << string(70, '-') << endl;
                 for (int i = 0; i < cant; ++i) {
                     string alerta = (res[i]->stock <= res[i]->stockMinimo) ? "BAJO STOCK" : "OK";
@@ -281,7 +281,7 @@ void menuRepuestos(SistemaTaller* s) {
             if (solicitarConfirmacion("¿Eliminar repuesto?")) {
                 ResultadoOperacion res = eliminarRepuesto(s, id);
                 if (res == EXITO) cout << "Repuesto eliminado." << endl;
-                else if (res == ERROR_TIENE_ORDENES) cout << "ERROR: El repuesto está registrado en órdenes y no puede eliminarse." << endl;
+                else if (res == ERROR_TIENE_ORDENES) cout << "ERROR: El repuesto esta registrado en ordenes y no puede eliminarse." << endl;
                 else cout << "ERROR: Repuesto no encontrado." << endl;
             }
         }
@@ -291,7 +291,7 @@ void menuRepuestos(SistemaTaller* s) {
 void menuOrdenes(SistemaTaller* s) {
     int opc;
     do {
-        cout << "\n--- ÓRDENES DE SERVICIO ---" << endl;
+        cout << "\n--- ORDENES DE SERVICIO ---" << endl;
         cout << "1. Abrir orden" << endl;
         cout << "2. Agregar repuesto a orden" << endl;
         cout << "3. Quitar repuesto de orden" << endl;
@@ -299,12 +299,12 @@ void menuOrdenes(SistemaTaller* s) {
         cout << "5. Anular orden" << endl;
         cout << "6. Ver detalle de orden" << endl;
         cout << "7. Listar órdenes" << endl;
-        cout << "0. Volver al menú principal" << endl;
+        cout << "0. Volver al menu principal" << endl;
         opc = leerInt("Seleccione una opción: ");
 
         if (opc == 1) {
-            int idV = leerInt("ID Vehículo: ");
-            int idM = leerInt("ID Mecánico: ");
+            int idV = leerInt("ID Vehiculo: ");
+            int idM = leerInt("ID Mecanico: ");
             char fecha[11], falla[200];
             leerCadena("Fecha apertura (YYYY-MM-DD): ", fecha, sizeof(fecha));
             leerCadena("Descripción de falla: ", falla, sizeof(falla));
@@ -314,10 +314,10 @@ void menuOrdenes(SistemaTaller* s) {
             OrdenServicio* o = abrirOrden(s, idV, idM, fecha, falla, km, &res);
             if (o) cout << "Orden de Servicio #" << o->id << " abierta con éxito." << endl;
             else {
-                if (res == ERROR_DUPLICADO) cout << "ERROR: El vehículo ya tiene una orden ABIERTA." << endl;
-                else if (res == ERROR_LIMITE_ALCANZADO) cout << "ERROR: El mecánico ya tiene 3 órdenes abiertas." << endl;
-                else if (res == ERROR_DATOS_INVALIDOS) cout << "ERROR: Kilometraje menor al actual del vehículo." << endl;
-                else cout << "ERROR: Vehículo o Mecánico no encontrado." << endl;
+                if (res == ERROR_DUPLICADO) cout << "ERROR: El vehiculo ya tiene una orden ABIERTA." << endl;
+                else if (res == ERROR_LIMITE_ALCANZADO) cout << "ERROR: El mecanico ya tiene 3 ordenes abiertas." << endl;
+                else if (res == ERROR_DATOS_INVALIDOS) cout << "ERROR: Kilometraje menor al actual del vehiculo." << endl;
+                else cout << "ERROR: Vehiculo o Mecanico no encontrado." << endl;
             }
 
         } else if (opc == 2) {
@@ -334,7 +334,7 @@ void menuOrdenes(SistemaTaller* s) {
             int idR = leerInt("ID Repuesto: ");
             ResultadoOperacion res = quitarRepuestoDeOrden(s, idO, idR);
             if (res == EXITO) cout << "Repuesto quitado de la orden y reincorporado al stock." << endl;
-            else cout << "ERROR: Operación fallida." << endl;
+            else cout << "ERROR: Operacion fallida." << endl;
 
         } else if (opc == 4) {
             int idO = leerInt("ID Orden: ");
@@ -364,7 +364,7 @@ void menuOrdenes(SistemaTaller* s) {
         } else if (opc == 7) {
             int cant;
             OrdenServicio** list = listarTodasOrdenes(s, &cant);
-            if (!list || cant == 0) cout << "No hay órdenes registradas." << endl;
+            if (!list || cant == 0) cout << "No hay ordenes registradas." << endl;
             else {
                 for (int i = 0; i < cant; ++i) mostrarDetalleOrden(s, list[i]);
             }
@@ -377,15 +377,15 @@ void menuPrincipal(SistemaTaller* s) {
     int opc;
     do {
         cout << "\n==========================================" << endl;
-        cout << "      SISTEMA DE GESTIÓN DE TALLER        " << endl;
+        cout << "      SISTEMA DE GESTION DE TALLER        " << endl;
         cout << " Taller: " << s->taller.nombre << endl;
         cout << "==========================================" << endl;
-        cout << "1. Gestión de Vehículos" << endl;
-        cout << "2. Gestión de Mecánicos" << endl;
+        cout << "1. Gestión de Vehiculos" << endl;
+        cout << "2. Gestión de Mecanicos" << endl;
         cout << "3. Inventario de Repuestos" << endl;
-        cout << "4. Órdenes de Servicio" << endl;
+        cout << "4. Ordenes de Servicio" << endl;
         cout << "0. Salir" << endl;
-        opc = leerInt("Seleccione una opción: ");
+        opc = leerInt("Seleccione una opcion: ");
 
         switch (opc) {
             case 1: menuVehiculos(s); break;
@@ -393,11 +393,11 @@ void menuPrincipal(SistemaTaller* s) {
             case 3: menuRepuestos(s); break;
             case 4: menuOrdenes(s); break;
             case 0:
-                if (!solicitarConfirmacion("¿Desea salir del programa? (Los datos no guardados se perderán)")) {
+                if (!solicitarConfirmacion("¿Desea salir del programa? (Los datos no guardados se perderan)")) {
                     opc = -1;
                 }
                 break;
-            default: cout << "Opción inválida." << endl;
+            default: cout << "Opcion invalida." << endl;
         }
     } while (opc != 0);
 }
