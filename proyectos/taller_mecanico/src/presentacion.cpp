@@ -17,15 +17,15 @@ static bool solicitarConfirmacion(const char* mensaje) {
 }
 
 static void leerCadena(const char* prompt, char* destino, int tam) {
-    cout << prompt;
+    cout << prompt<<flush; 
     cin.getline(destino, tam);
 }
 
 static int leerInt(const char* prompt) {
     int val;
     while (true) {
-        cout << prompt;
-        if (cin >> val) {
+        cout << prompt<<flush;
+                if (cin >> val) {
             cin.ignore(numeric_limits<streamsize>::max(), '\n');
             return val;
         }
@@ -38,7 +38,7 @@ static int leerInt(const char* prompt) {
 static float leerFloat(const char* prompt) {
     float val;
     while (true) {
-        cout << prompt;
+        cout << prompt <<flush;
         if (cin >> val) {
             cin.ignore(numeric_limits<streamsize>::max(), '\n');
             return val;
@@ -159,6 +159,33 @@ void menuVehiculos(SistemaTaller* s) {
                 else cout << "ERROR: No se pudo registrar el vehículo (datos inválidos)." << endl;
             } else cout << "Registro cancelado." << endl;
 
+
+  } else if (opc == 2) {
+            cout << "1. Buscar por ID" << endl;
+            cout << "2. Buscar por Placa" << endl;
+            int tipoBusqueda = leerInt("Seleccione metodo de busqueda: ");
+            
+            if (tipoBusqueda == 1) {
+                int idBuscado = leerInt("Ingrese ID del vehiculo: ");
+                Vehiculo* v = buscarVehiculoPorID(s, idBuscado);
+                if (v) {
+                    cout << "\nVehiculo encontrado:" << endl;
+                    mostrarVehiculo(v);
+                } else {
+                    cout << "ERROR: Vehiculo no encontrado." << endl;
+                }
+            } else if (tipoBusqueda == 2) {
+                char placaBuscada[10];
+                leerCadena("Ingrese placa del vehiculo: ", placaBuscada, sizeof(placaBuscada));
+                Vehiculo* v = buscarVehiculoPorPlaca(s, placaBuscada);
+                if (v) {
+                    cout << "\nVehiculo encontrado:" << endl;
+                    mostrarVehiculo(v);
+                } else {
+                    cout << "ERROR: Vehiculo no encontrado." << endl;
+                }
+            }
+
         } else if (opc == 3) {
             char sub[100];
             leerCadena("Ingrese nombre o parte del nombre del propietario: ", sub, sizeof(sub));
@@ -166,6 +193,36 @@ void menuVehiculos(SistemaTaller* s) {
             Vehiculo** res = buscarVehiculosPorPropietario(s, sub, &cant);
             mostrarListaVehiculos(res, cant);
             delete[] res;
+
+  } else if (opc == 4) {
+            int id = leerInt("Ingrese ID del vehiculo a actualizar: ");
+            Vehiculo* vExistente = buscarVehiculoPorID(s, id);
+            
+            if (!vExistente) {
+                cout << "ERROR: Vehiculo no encontrado." << endl;
+            } else {
+                cout << "\n--- Datos actuales del vehículo ---" << endl;
+                mostrarVehiculo(vExistente);
+                cout << "-----------------------------------" << endl;
+                
+                Vehiculo datosNuevos;
+                leerCadena("Ingrese nueva marca: ", datosNuevos.marca, sizeof(datosNuevos.marca));
+                leerCadena("Ingrese nuevo modelo: ", datosNuevos.modelo, sizeof(datosNuevos.modelo));
+                datosNuevos.anio = leerInt("Ingrese nuevo año (1950-2027): ");
+                leerCadena("Ingrese nuevo nombre del propietario: ", datosNuevos.nombrePropietario, sizeof(datosNuevos.nombrePropietario));
+                leerCadena("Ingrese nueva cédula del propietario: ", datosNuevos.cedulaPropietario, sizeof(datosNuevos.cedulaPropietario));
+                leerCadena("Ingrese nuevo teléfono del propietario: ", datosNuevos.telefonoPropietario, sizeof(datosNuevos.telefonoPropietario));
+                
+                if (solicitarConfirmacion("¿Desea guardar los cambios?")) {
+                    if (actualizarVehiculo(s, id, datosNuevos)) {
+                        cout << "Vehículo actualizado con éxito." << endl;
+                    } else {
+                        cout << "ERROR: No se pudo actualizar el vehículo (año inválido)." << endl;
+                    }
+                } else {
+                    cout << "Actualización cancelada." << endl;
+                }
+            }          
 
         } else if (opc == 5) {
             int id = leerInt("Ingrese ID del vehículo a eliminar: ");
